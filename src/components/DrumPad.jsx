@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useEffect } from "react";
 
-function DrumPad({ id, text, name, displayName}) {
+function DrumPad({ id, text, name, displayName, volume}) {
 
     const audioRef = useRef();
 
@@ -10,13 +10,14 @@ function DrumPad({ id, text, name, displayName}) {
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, []);
+    });
 
     const handleKeyDown = (event) => {
         const key = event.key.toUpperCase();
         const audio = audioRef.current;
 
         if (key == id) {
+            audio.volume = volume;
             audio.currentTime = 0;
             audio.play();
             displayName(audio.getAttribute('name'));
@@ -25,6 +26,7 @@ function DrumPad({ id, text, name, displayName}) {
 
     const handlePlayAudio = () => {
         const audio = audioRef.current;
+        audio.volume = volume;
         audio.currentTime = 0;
         audio.play();
         displayName(audio.getAttribute('name'));
