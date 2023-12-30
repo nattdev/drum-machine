@@ -2,12 +2,12 @@ import DisplayName from "./DisplayName";
 import PowerSwitch from "./PowerSwitch";
 import VolumeControl from "./VolumeControl";
 
-function Controls() {
+function Controls({name}) {
     return (
         <div id="controls">
             <PowerSwitch />
             <VolumeControl />
-            <DisplayName />
+            <DisplayName name={name}/>
         </div>
     )
 }

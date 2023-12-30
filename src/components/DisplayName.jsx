@@ -1,7 +1,8 @@
-function DisplayName() {
+function DisplayName({name}) {
+
     return (
         <div className="display-name">
-            <p className="name"></p>
+            <p id="display" className="name">{name}</p>
         </div>
     )
 }

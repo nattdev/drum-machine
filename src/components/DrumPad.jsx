@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useEffect } from "react";
 
-function DrumPad({ id, text, name }) {
+function DrumPad({ id, text, name, displayName}) {
 
     const audioRef = useRef();
 
@@ -19,19 +19,20 @@ function DrumPad({ id, text, name }) {
         if (key == id) {
             audio.currentTime = 0;
             audio.play();
+            displayName(audio.getAttribute('name'));
         }
     }
 
     const handlePlayAudio = () => {
         const audio = audioRef.current;
-
         audio.currentTime = 0;
         audio.play();
+        displayName(audio.getAttribute('name'));
     };
 
     return (
         <div id={name} onClick={handlePlayAudio} className="drum-pad">
-            <audio ref={audioRef} id={id} className="clip" src={`src/assets/${name}.mp3`}></audio>
+            <audio ref={audioRef} id={id} name={name} className="clip" src={`src/assets/${name}.mp3`}></audio>
             {text}
         </div>
     )
