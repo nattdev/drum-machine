@@ -38,7 +38,7 @@ function DrumPad({ id, text, name, displayName, volume, isActive }) {
 
     return (
         <div id={name} onClick={handlePlayAudio} className="drum-pad transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 p-7 rounded cursor-pointer font-bold text-white select-none">
-            <audio ref={audioRef} id={id} name={name} className="clip" src={`src/assets/${name}.mp3`}></audio>
+            <audio ref={audioRef} id={id} name={name} className="clip" src={`https://cdn.jsdelivr.net/gh/nattdev/drum-machine/src/assets/${name}.mp3`}></audio>
             {text}
         </div>
     )
