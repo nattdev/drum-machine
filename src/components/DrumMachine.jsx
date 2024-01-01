@@ -23,9 +23,11 @@ function DrumMachine() {
     };
 
     return (
-        <div id="drum-machine">
-            <Controls name={name} volumeData={volumeData} volume={volume} isActiveData={isActiveData} isActive={isActive}/>
-            <PadBank displayName={displayName} volume={volume} isActive={isActive}/>
+        <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-center items-center">
+            <div className="flex flex-col items-center justify-center" id="drum-machine">
+                <Controls name={name} volumeData={volumeData} volume={volume} isActiveData={isActiveData} isActive={isActive} />
+                <PadBank displayName={displayName} volume={volume} isActive={isActive} />
+            </div>
         </div>
     )
 }

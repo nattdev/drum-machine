@@ -12,7 +12,7 @@ function VolumeControl({volumeData, volume}) {
     return (
         <div className="volume-control">
             <form>
-                <input ref={inputRef} onChange={handleVolumeControl} type='range' min='0' max='1' step='0.1' />{volume}
+                <input ref={inputRef} className="bg-black black mx-4" onChange={handleVolumeControl} type='range' min='0' max='1' step='0.1' />{volume}
             </form>
         </div>
     )
