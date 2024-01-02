@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-function VolumeControl({volumeData, volume}) {
+function VolumeControl({ volumeData, volume }) {
 
     const inputRef = useRef();
 
@@ -12,7 +12,7 @@ function VolumeControl({volumeData, volume}) {
     return (
         <div className="volume-control">
             <form>
-                <input ref={inputRef} className="bg-black black mx-4" onChange={handleVolumeControl} type='range' min='0' max='1' step='0.1' />{volume}
+                <input ref={inputRef} className="rounded-lg" onChange={handleVolumeControl} type='range' min='0' max='1' step='0.1' /><label className="inline-block w-8">{volume}</label>
             </form>
         </div>
     )
